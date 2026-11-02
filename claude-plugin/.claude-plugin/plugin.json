@@ -1,0 +1,6 @@
+{
+  "name": "bump-me",
+  "version": "1.0.0",
+  "description": "Sends Claude Code's turn and permission events to the Bump Me VS Code extension, so you get a macOS alert when the window isn't focused.",
+  "author": { "name": "Matthew Hamrick" }
+}

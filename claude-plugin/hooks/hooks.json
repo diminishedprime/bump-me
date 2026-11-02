@@ -1,0 +1,48 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "zsh \"${CLAUDE_PLUGIN_ROOT}/scripts/forward.zsh\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "zsh \"${CLAUDE_PLUGIN_ROOT}/scripts/forward.zsh\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "zsh \"${CLAUDE_PLUGIN_ROOT}/scripts/forward.zsh\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "zsh \"${CLAUDE_PLUGIN_ROOT}/scripts/forward.zsh\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

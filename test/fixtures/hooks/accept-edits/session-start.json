@@ -1,0 +1,8 @@
+{
+  "cwd": "<workspace>",
+  "hook_event_name": "SessionStart",
+  "scratchpad_dir": "<claude-tmp>/<workspace-slug>/<session_id>/scratchpad",
+  "session_id": "<session_id>",
+  "source": "startup",
+  "transcript_path": "<home>/.claude/projects/<workspace-slug>/<session_id>.jsonl"
+}

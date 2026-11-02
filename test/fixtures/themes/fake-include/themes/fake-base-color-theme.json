@@ -1,0 +1,14 @@
+{
+  "name": "Fake Base",
+  "colors": {
+    "editor.background": "#202020"
+  },
+  "tokenColors": [
+    { "scope": "keyword", "settings": { "foreground": "#FF8800" } },
+    { "scope": "string", "settings": { "foreground": "#00CC66" } },
+    {
+      "scope": "entity.name.function",
+      "settings": { "foreground": "#6688FF" }
+    }
+  ]
+}

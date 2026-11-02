@@ -1,0 +1,12 @@
+{
+  "name": "fake-light",
+  "contributes": {
+    "themes": [
+      {
+        "label": "Fake Light",
+        "uiTheme": "vs",
+        "path": "./themes/fake-light-color-theme.jsonc"
+      }
+    ]
+  }
+}

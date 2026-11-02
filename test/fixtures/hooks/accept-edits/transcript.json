@@ -1,0 +1,905 @@
+[
+  {
+    "content": "Run the bash command: rm /tmp/bump-me-capture",
+    "operation": "enqueue",
+    "sessionId": "<session_id>",
+    "timestamp": "<timestamp-1>",
+    "type": "queue-operation"
+  },
+  {
+    "operation": "dequeue",
+    "sessionId": "<session_id>",
+    "timestamp": "<timestamp-2>",
+    "type": "queue-operation"
+  },
+  {
+    "cwd": "<workspace>",
+    "entrypoint": "claude-vscode",
+    "gitBranch": "HEAD",
+    "isSidechain": false,
+    "message": {
+      "content": "Run the bash command: rm /tmp/bump-me-capture",
+      "role": "user"
+    },
+    "parentUuid": null,
+    "permissionMode": "acceptEdits",
+    "promptId": "<prompt_id>",
+    "promptSource": "sdk",
+    "sessionId": "<session_id>",
+    "timestamp": "<timestamp-3>",
+    "turnOrigin": "sdk",
+    "turnPosition": { "promptIndex": 0, "turnIndex": 1 },
+    "type": "user",
+    "userType": "external",
+    "uuid": "<uuid-1>",
+    "version": "2.1.311"
+  },
+  {
+    "attachment": {
+      "snapshot": {
+        "additionalWorkingDirectories": [],
+        "isGitRepo": false,
+        "isWorktree": false,
+        "osVersion": "Darwin 25.6.0",
+        "platform": "darwin",
+        "scratchpadDirectory": "<claude-tmp>/<workspace-slug>/<session_id>/scratchpad",
+        "shell": "zsh",
+        "workingDirectory": "<workspace>"
+      },
+      "type": "environment"
+    },
+    "cwd": "<workspace>",
+    "entrypoint": "claude-vscode",
+    "gitBranch": "HEAD",
+    "isSidechain": false,
+    "parentUuid": "<uuid-1>",
+    "rendered": [{ "content": "<environment-reminder>" }],
+    "renderedRole": "system",
+    "sessionId": "<session_id>",
+    "timestamp": "<timestamp-4>",
+    "type": "attachment",
+    "userType": "external",
+    "uuid": "<uuid-2>",
+    "version": "2.1.311"
+  },
+  {
+    "attachment": {
+      "identity": {
+        "knowledgeCutoff": "June 2026",
+        "marketingName": "Haiku 5.5",
+        "modelId": "claude-haiku-5-5"
+      },
+      "text": "<model-reminder>",
+      "type": "model"
+    },
+    "cwd": "<workspace>",
+    "entrypoint": "claude-vscode",
+    "gitBranch": "HEAD",
+    "isSidechain": false,
+    "parentUuid": "<uuid-2>",
+    "rendered": [{ "content": "<model-reminder>" }],
+    "renderedRole": "system",
+    "sessionId": "<session_id>",
+    "timestamp": "<timestamp-5>",
+    "type": "attachment",
+    "userType": "external",
+    "uuid": "<uuid-3>",
+    "version": "2.1.311"
+  },
+  {
+    "attachment": {
+      "addedLines": ["ArtifactComments", "ArtifactData"],
+      "addedNames": ["ArtifactComments", "ArtifactData"],
+      "failedMcpServers": [],
+      "needsAuthMcpServers": [],
+      "pendingMcpServers": [],
+      "readdedNames": [],
+      "removedNames": [],
+      "type": "deferred_tools_delta",
+      "wireHiddenNames": []
+    },
+    "cwd": "<workspace>",
+    "entrypoint": "claude-vscode",
+    "gitBranch": "HEAD",
+    "isSidechain": false,
+    "parentUuid": "<uuid-3>",
+    "rendered": [{ "content": "<deferred-tools-reminder>" }],
+    "renderedRole": "system",
+    "sessionId": "<session_id>",
+    "timestamp": "<timestamp-6>",
+    "type": "attachment",
+    "userType": "external",
+    "uuid": "<uuid-4>",
+    "version": "2.1.311"
+  },
+  {
+    "attachment": {
+      "addedLines": [
+        "<agent:claude>",
+        "<agent:claude-code-guide>",
+        "<agent:Explore>",
+        "<agent:general-purpose>",
+        "<agent:Plan>",
+        "<agent:statusline-setup>"
+      ],
+      "addedTypes": [
+        "claude",
+        "claude-code-guide",
+        "Explore",
+        "general-purpose",
+        "Plan",
+        "statusline-setup"
+      ],
+      "builtInPluginTypes": [],
+      "builtInTypes": [
+        "claude",
+        "claude-code-guide",
+        "Explore",
+        "general-purpose",
+        "Plan",
+        "statusline-setup"
+      ],
+      "isInitial": true,
+      "removedTypes": [],
+      "showConcurrencyNote": true,
+      "type": "agent_listing_delta"
+    },
+    "cwd": "<workspace>",
+    "entrypoint": "claude-vscode",
+    "gitBranch": "HEAD",
+    "isSidechain": false,
+    "parentUuid": "<uuid-4>",
+    "rendered": [{ "content": "<agent-listing-reminder>" }],
+    "renderedRole": "system",
+    "sessionId": "<session_id>",
+    "timestamp": "<timestamp-7>",
+    "type": "attachment",
+    "userType": "external",
+    "uuid": "<uuid-5>",
+    "version": "2.1.311"
+  },
+  {
+    "attachment": {
+      "content": "<skill-listing-reminder>",
+      "digests": ["<hash-1>"],
+      "isInitial": true,
+      "names": "<skill-names>",
+      "skillCount": 1,
+      "type": "skill_listing"
+    },
+    "cwd": "<workspace>",
+    "entrypoint": "claude-vscode",
+    "gitBranch": "HEAD",
+    "isSidechain": false,
+    "parentUuid": "<uuid-5>",
+    "rendered": [{ "content": "<skill-listing-reminder>" }],
+    "renderedRole": "system",
+    "sessionId": "<session_id>",
+    "timestamp": "<timestamp-8>",
+    "type": "attachment",
+    "userType": "external",
+    "uuid": "<uuid-6>",
+    "version": "2.1.311"
+  },
+  {
+    "attachment": {
+      "text": "<total-tokens-reminder>",
+      "type": "total_tokens_reminder"
+    },
+    "cwd": "<workspace>",
+    "entrypoint": "claude-vscode",
+    "gitBranch": "HEAD",
+    "isSidechain": false,
+    "parentUuid": "<uuid-6>",
+    "rendered": [{ "content": "<total-tokens-reminder>" }],
+    "renderedRole": "system",
+    "sessionId": "<session_id>",
+    "timestamp": "<timestamp-9>",
+    "type": "attachment",
+    "userType": "external",
+    "uuid": "<uuid-7>",
+    "version": "2.1.311"
+  },
+  {
+    "isSnapshotUpdate": false,
+    "messageId": "<uuid-1>",
+    "snapshot": {
+      "messageId": "<uuid-1>",
+      "timestamp": "<timestamp-10>",
+      "trackedFileBackups": {}
+    },
+    "type": "file-history-snapshot"
+  },
+  { "atis": "", "sessionId": "<session_id>", "type": "atis-latch" },
+  {
+    "attachment": {
+      "context": { "userEmail": "<user-email-context>" },
+      "type": "session_context"
+    },
+    "cwd": "<workspace>",
+    "entrypoint": "claude-vscode",
+    "gitBranch": "HEAD",
+    "isSidechain": false,
+    "parentUuid": "<uuid-7>",
+    "rendered": [{ "content": "<user-context-reminder>" }],
+    "renderedRole": "user",
+    "sessionId": "<session_id>",
+    "timestamp": "<timestamp-11>",
+    "type": "attachment",
+    "userType": "external",
+    "uuid": "<uuid-8>",
+    "version": "2.1.311"
+  },
+  {
+    "attachment": { "date": "2026-11-01", "type": "date" },
+    "cwd": "<workspace>",
+    "entrypoint": "claude-vscode",
+    "gitBranch": "HEAD",
+    "isSidechain": false,
+    "parentUuid": "<uuid-8>",
+    "rendered": [{ "content": "<date-reminder>" }],
+    "renderedRole": "system",
+    "sessionId": "<session_id>",
+    "timestamp": "<timestamp-12>",
+    "type": "attachment",
+    "userType": "external",
+    "uuid": "<uuid-9>",
+    "version": "2.1.311"
+  },
+  {
+    "attachment": {
+      "organizationUuid": "<organizationUuid>",
+      "type": "credential_org"
+    },
+    "cwd": "<workspace>",
+    "entrypoint": "claude-vscode",
+    "gitBranch": "HEAD",
+    "isSidechain": false,
+    "parentUuid": "<uuid-9>",
+    "sessionId": "<session_id>",
+    "timestamp": "<timestamp-13>",
+    "type": "attachment",
+    "userType": "external",
+    "uuid": "<uuid-10>",
+    "version": "2.1.311"
+  },
+  {
+    "attachment": {
+      "commit": "Co-Authored-By: Claude Haiku 5.5 <noreply@anthropic.com>",
+      "managedCommit": false,
+      "managedPr": false,
+      "pr": "🤖 Generated with [Claude Code](https://claude.com/claude-code)",
+      "sendUserFileHint": false,
+      "type": "remote_session_change",
+      "url": null
+    },
+    "cwd": "<workspace>",
+    "entrypoint": "claude-vscode",
+    "gitBranch": "HEAD",
+    "isSidechain": false,
+    "parentUuid": "<uuid-10>",
+    "rendered": [{ "content": "<attribution-reminder>" }],
+    "renderedBesideToolResult": true,
+    "renderedRole": "user",
+    "sessionId": "<session_id>",
+    "timestamp": "<timestamp-14>",
+    "type": "attachment",
+    "userType": "external",
+    "uuid": "<uuid-11>",
+    "version": "2.1.311"
+  },
+  {
+    "attachment": {
+      "contextRendering": "announced",
+      "echoWireToolInputs": true,
+      "reminderFold": false,
+      "systemPrompt": [
+        "<system-prompt-identity>",
+        "<system-prompt-artifacts>",
+        "__SYSTEM_PROMPT_DYNAMIC_BOUNDARY__",
+        "<system-prompt-guidance>",
+        "<system-prompt-pronouns>",
+        "<system-prompt-confirm-actions>",
+        "<system-prompt-session-guidance>",
+        "<system-prompt-memory>",
+        "<system-prompt-models>",
+        "<system-prompt-context-management>",
+        "<system-prompt-act>",
+        "<system-prompt-effort>",
+        "<total-tokens-reminder>"
+      ],
+      "type": "prompt_snapshot"
+    },
+    "cwd": "<workspace>",
+    "entrypoint": "claude-vscode",
+    "gitBranch": "HEAD",
+    "isSidechain": false,
+    "parentUuid": "<uuid-11>",
+    "sessionId": "<session_id>",
+    "timestamp": "<timestamp-15>",
+    "type": "attachment",
+    "userType": "external",
+    "uuid": "<uuid-12>",
+    "version": "2.1.311"
+  },
+  {
+    "sessionId": "<session_id>",
+    "shape": {
+      "system": [
+        {
+          "text": "You are a Claude agent, built on Anthropic's Claude Agent SDK.",
+          "type": "text"
+        },
+        { "text": "<system-prompt-identity>", "type": "text" },
+        { "text": "<system-prompt-guidance>", "type": "text" }
+      ],
+      "tools": [
+        "<tool:Agent>",
+        "<tool:Artifact>",
+        "<tool:Bash>",
+        "<tool:Edit>",
+        "<tool:ListAgents>",
+        "<tool:Read>",
+        "<tool:ReportFindings>",
+        "<tool:ScheduleWakeup>",
+        "<tool:Skill>",
+        "<tool:ToolSearch>",
+        "<tool:Workflow>",
+        "<tool:DeferredToolPlaceholder>",
+        "<tool:Write>",
+        {
+          "defer_loading": true,
+          "model": "claude-opus-5-5",
+          "name": "advisor",
+          "type": "advisor_20260301"
+        }
+      ]
+    },
+    "shapeHash": "<hash-2>",
+    "timestamp": "<timestamp-16>",
+    "type": "api-request-shape",
+    "version": "2.1.311"
+  },
+  {
+    "hash": "<hash-3>",
+    "message": {
+      "content": [
+        { "text": "<user-context-reminder>", "type": "text" },
+        { "text": "<attribution-reminder>", "type": "text" },
+        {
+          "text": "Run the bash command: rm /tmp/bump-me-capture",
+          "type": "text"
+        }
+      ],
+      "role": "user"
+    },
+    "sessionId": "<session_id>",
+    "type": "api-request-blob"
+  },
+  {
+    "hash": "<hash-4>",
+    "message": {
+      "content": [{ "text": "<environment-reminder>", "type": "text" }],
+      "output_config": { "effort": "medium" },
+      "role": "system"
+    },
+    "sessionId": "<session_id>",
+    "type": "api-request-blob"
+  },
+  {
+    "cacheControl": [
+      {
+        "path": ["system", 1],
+        "value": { "scope": "global", "ttl": "1h", "type": "ephemeral" }
+      },
+      { "path": ["system", 2], "value": { "ttl": "1h", "type": "ephemeral" } },
+      {
+        "path": ["messages", 1, "content", 0],
+        "value": { "ttl": "1h", "type": "ephemeral" }
+      }
+    ],
+    "id": "<uuid-13>",
+    "keep": 0,
+    "params": {
+      "betas": [
+        "oauth-2025-04-20",
+        "interleaved-thinking-2025-05-14",
+        "context-management-2025-06-27",
+        "prompt-caching-scope-2026-01-05",
+        "claude-code-20250219",
+        "per-turn-control-2026-07-01",
+        "mid-conversation-tool-changes-2026-07-01",
+        "inline-tools-2026-09-15",
+        "advisor-tool-2026-03-01",
+        "thinking-token-count-2026-05-13",
+        "advanced-tool-use-2025-11-20",
+        "mid-conversation-system-clear-at-2026-08-21",
+        "effort-2025-11-24",
+        "thinking-binding-controls-2026-08-01",
+        "extended-cache-ttl-2025-04-11",
+        "cache-diagnosis-2026-04-07",
+        "message-threads-2026-08-12"
+      ],
+      "context_management": {
+        "edits": [{ "keep": "all", "type": "clear_thinking_20251015" }]
+      },
+      "max_tokens": 128000,
+      "model": "claude-haiku-5-5",
+      "output_config": { "effort": "medium" },
+      "thinking": { "display": "omitted", "type": "adaptive" }
+    },
+    "querySource": "sdk",
+    "requestDigest": "<hash-5>",
+    "sessionId": "<session_id>",
+    "shapeHash": "<hash-2>",
+    "tail": ["<hash-3>", "<hash-4>"],
+    "timestamp": "<timestamp-17>",
+    "type": "api-request",
+    "version": "2.1.311"
+  },
+  {
+    "lastPrompt": "Run the bash command: rm /tmp/bump-me-capture",
+    "leafUuid": "<uuid-12>",
+    "sessionId": "<session_id>",
+    "type": "last-prompt"
+  },
+  { "atis": "", "sessionId": "<session_id>", "type": "atis-latch" },
+  {
+    "aiTitle": "Remove the capture file",
+    "sessionId": "<session_id>",
+    "type": "ai-title"
+  },
+  { "sessionId": "<session_id>", "tools": ["Bash"], "type": "tools-used" },
+  {
+    "advisorModel": "claude-opus-5-5",
+    "apiBlockIndex": 0,
+    "cwd": "<workspace>",
+    "effort": "medium",
+    "entrypoint": "claude-vscode",
+    "gitBranch": "HEAD",
+    "isSidechain": false,
+    "message": {
+      "container": null,
+      "content": [
+        {
+          "caller": { "type": "direct" },
+          "id": "<toolu-1>",
+          "input": {
+            "command": "rm /tmp/bump-me-capture",
+            "description": "<description>"
+          },
+          "name": "Bash",
+          "type": "tool_use"
+        }
+      ],
+      "context_management": null,
+      "diagnostics": null,
+      "id": "<msg-1>",
+      "input_transformations": [],
+      "model": "claude-haiku-5-5",
+      "role": "assistant",
+      "stop_details": null,
+      "stop_reason": "tool_use",
+      "stop_sequence": null,
+      "type": "message",
+      "usage": {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "fallback_credit": null,
+        "inference_geo": "global",
+        "input_tokens": 0,
+        "iterations": [
+          {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "type": "message"
+          }
+        ],
+        "output_tokens": 0,
+        "output_tokens_details": { "thinking_tokens": 0 },
+        "server_tool_use": {
+          "web_fetch_requests": 0,
+          "web_search_requests": 0
+        },
+        "service_tier": "standard",
+        "speed": "standard"
+      }
+    },
+    "parentUuid": "<uuid-12>",
+    "perTurnEffort": "medium",
+    "requestId": "<req-1>",
+    "requestRef": "<uuid-13>",
+    "requestedModel": "claude-haiku-5-5",
+    "sessionId": "<session_id>",
+    "timestamp": "<timestamp-18>",
+    "type": "assistant",
+    "userType": "external",
+    "uuid": "<uuid-14>",
+    "version": "2.1.311",
+    "wireToolInputs": {
+      "<toolu-1>": {
+        "command": "rm /tmp/bump-me-capture",
+        "description": "<description>"
+      }
+    }
+  },
+  {
+    "cwd": "<workspace>",
+    "entrypoint": "claude-vscode",
+    "gitBranch": "HEAD",
+    "isSidechain": false,
+    "message": {
+      "content": [
+        {
+          "content": "rm in '/tmp/bump-me-capture' needs approval. The path is outside the working directories for this session ('<workspace>'). Allowing runs the command as written.",
+          "is_error": true,
+          "tool_use_id": "<toolu-1>",
+          "type": "tool_result"
+        }
+      ],
+      "role": "user"
+    },
+    "parentUuid": "<uuid-14>",
+    "permissionDecision": {
+      "decision": "reject",
+      "reasonCode": "unknown",
+      "source": "config"
+    },
+    "promptId": "<prompt_id>",
+    "sessionId": "<session_id>",
+    "sourceToolAssistantUUID": "<uuid-14>",
+    "timestamp": "<timestamp-19>",
+    "toolDenialKind": "user-rejected",
+    "toolUseResult": "Error: rm in '/tmp/bump-me-capture' needs approval. The path is outside the working directories for this session ('<workspace>'). Allowing runs the command as written.",
+    "type": "user",
+    "userType": "external",
+    "uuid": "<uuid-15>",
+    "version": "2.1.311"
+  },
+  {
+    "attachment": {
+      "cliPrefix": "You are a Claude agent, built on Anthropic's Claude Agent SDK.",
+      "contextRendering": "announced",
+      "echoWireToolInputs": true,
+      "inlineTools": true,
+      "keptReminders": true,
+      "reminderFold": false,
+      "systemPrompt": [
+        "<system-prompt-identity>",
+        "<system-prompt-artifacts>",
+        "__SYSTEM_PROMPT_DYNAMIC_BOUNDARY__",
+        "<system-prompt-guidance>",
+        "<system-prompt-pronouns>",
+        "<system-prompt-confirm-actions>",
+        "<system-prompt-session-guidance>",
+        "<system-prompt-memory>",
+        "<system-prompt-models>",
+        "<system-prompt-context-management>",
+        "<system-prompt-act>",
+        "<system-prompt-effort>",
+        "<total-tokens-reminder>"
+      ],
+      "systemTurns": true,
+      "toolChangeHeader": true,
+      "tools": [
+        "<tool:Agent>",
+        "<tool:Artifact>",
+        "<tool:Bash>",
+        "<tool:Edit>",
+        "<tool:ListAgents>",
+        "<tool:Read>",
+        "<tool:ReportFindings>",
+        "<tool:ScheduleWakeup>",
+        "<tool:Skill>",
+        "<tool:ToolSearch>",
+        "<tool:Workflow>",
+        "<tool:Write>"
+      ],
+      "type": "prompt_snapshot"
+    },
+    "cwd": "<workspace>",
+    "entrypoint": "claude-vscode",
+    "gitBranch": "HEAD",
+    "isSidechain": false,
+    "parentUuid": "<uuid-15>",
+    "sessionId": "<session_id>",
+    "timestamp": "<timestamp-20>",
+    "type": "attachment",
+    "userType": "external",
+    "uuid": "<uuid-16>",
+    "version": "2.1.311"
+  },
+  {
+    "attachment": {
+      "text": "<total-tokens-reminder>",
+      "type": "total_tokens_reminder"
+    },
+    "cwd": "<workspace>",
+    "entrypoint": "claude-vscode",
+    "gitBranch": "HEAD",
+    "isSidechain": false,
+    "parentUuid": "<uuid-16>",
+    "rendered": [{ "content": "<total-tokens-reminder>" }],
+    "renderedRole": "system",
+    "sessionId": "<session_id>",
+    "timestamp": "<timestamp-21>",
+    "type": "attachment",
+    "userType": "external",
+    "uuid": "<uuid-17>",
+    "version": "2.1.311"
+  },
+  {
+    "hash": "<hash-6>",
+    "message": {
+      "content": [{ "text": "<total-tokens-reminder>", "type": "text" }],
+      "role": "system"
+    },
+    "sessionId": "<session_id>",
+    "type": "api-request-blob"
+  },
+  {
+    "base": "<uuid-13>",
+    "cacheControl": [
+      {
+        "path": ["system", 1],
+        "value": { "scope": "global", "ttl": "1h", "type": "ephemeral" }
+      },
+      { "path": ["system", 2], "value": { "ttl": "1h", "type": "ephemeral" } },
+      {
+        "path": ["messages", 4, "content", 0],
+        "value": { "ttl": "1h", "type": "ephemeral" }
+      }
+    ],
+    "id": "<uuid-18>",
+    "keep": 2,
+    "params": {
+      "betas": [
+        "oauth-2025-04-20",
+        "interleaved-thinking-2025-05-14",
+        "context-management-2025-06-27",
+        "prompt-caching-scope-2026-01-05",
+        "claude-code-20250219",
+        "per-turn-control-2026-07-01",
+        "mid-conversation-tool-changes-2026-07-01",
+        "inline-tools-2026-09-15",
+        "advisor-tool-2026-03-01",
+        "thinking-token-count-2026-05-13",
+        "advanced-tool-use-2025-11-20",
+        "mid-conversation-system-clear-at-2026-08-21",
+        "effort-2025-11-24",
+        "thinking-binding-controls-2026-08-01",
+        "extended-cache-ttl-2025-04-11",
+        "cache-diagnosis-2026-04-07",
+        "message-threads-2026-08-12"
+      ],
+      "context_management": {
+        "edits": [{ "keep": "all", "type": "clear_thinking_20251015" }]
+      },
+      "max_tokens": 128000,
+      "model": "claude-haiku-5-5",
+      "output_config": { "effort": "medium" },
+      "thinking": { "display": "omitted", "type": "adaptive" }
+    },
+    "querySource": "sdk",
+    "requestDigest": "<hash-9>",
+    "sessionId": "<session_id>",
+    "shapeHash": "<hash-2>",
+    "tail": ["<hash-7>", "<hash-8>", "<hash-6>"],
+    "timestamp": "<timestamp-22>",
+    "type": "api-request",
+    "version": "2.1.311"
+  },
+  {
+    "lastPrompt": "Run the bash command: rm /tmp/bump-me-capture",
+    "leafUuid": "<uuid-17>",
+    "sessionId": "<session_id>",
+    "type": "last-prompt"
+  },
+  {
+    "aiTitle": "Remove the capture file",
+    "sessionId": "<session_id>",
+    "type": "ai-title"
+  },
+  { "atis": "", "sessionId": "<session_id>", "type": "atis-latch" },
+  {
+    "advisorModel": "claude-opus-5-5",
+    "apiBlockIndex": 0,
+    "cwd": "<workspace>",
+    "effort": "medium",
+    "entrypoint": "claude-vscode",
+    "gitBranch": "HEAD",
+    "isSidechain": false,
+    "message": {
+      "container": null,
+      "content": [
+        { "signature": "<signature>", "thinking": "", "type": "thinking" }
+      ],
+      "context_management": null,
+      "diagnostics": null,
+      "id": "<msg-2>",
+      "input_transformations": [],
+      "model": "claude-haiku-5-5",
+      "role": "assistant",
+      "stop_details": null,
+      "stop_reason": "end_turn",
+      "stop_sequence": null,
+      "type": "message",
+      "usage": {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "fallback_credit": null,
+        "inference_geo": "global",
+        "input_tokens": 0,
+        "iterations": [
+          {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "type": "message"
+          }
+        ],
+        "output_tokens": 0,
+        "output_tokens_details": { "thinking_tokens": 0 },
+        "server_tool_use": {
+          "web_fetch_requests": 0,
+          "web_search_requests": 0
+        },
+        "service_tier": "standard",
+        "speed": "standard"
+      }
+    },
+    "parentUuid": "<uuid-17>",
+    "perTurnEffort": "medium",
+    "requestId": "<req-2>",
+    "requestRef": "<uuid-18>",
+    "requestedModel": "claude-haiku-5-5",
+    "sessionId": "<session_id>",
+    "thinkingDisplay": "omitted",
+    "thinkingDurationMs": 0,
+    "timestamp": "<timestamp-23>",
+    "type": "assistant",
+    "userType": "external",
+    "uuid": "<uuid-19>",
+    "version": "2.1.311"
+  },
+  {
+    "advisorModel": "claude-opus-5-5",
+    "apiBlockIndex": 1,
+    "cwd": "<workspace>",
+    "effort": "medium",
+    "entrypoint": "claude-vscode",
+    "gitBranch": "HEAD",
+    "isSidechain": false,
+    "message": {
+      "container": null,
+      "content": [{ "text": "<assistant-reply>", "type": "text" }],
+      "context_management": null,
+      "diagnostics": null,
+      "id": "<msg-2>",
+      "input_transformations": [],
+      "model": "claude-haiku-5-5",
+      "role": "assistant",
+      "stop_details": null,
+      "stop_reason": "end_turn",
+      "stop_sequence": null,
+      "type": "message",
+      "usage": {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "fallback_credit": null,
+        "inference_geo": "global",
+        "input_tokens": 0,
+        "iterations": [
+          {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "type": "message"
+          }
+        ],
+        "output_tokens": 0,
+        "output_tokens_details": { "thinking_tokens": 0 },
+        "server_tool_use": {
+          "web_fetch_requests": 0,
+          "web_search_requests": 0
+        },
+        "service_tier": "standard",
+        "speed": "standard"
+      }
+    },
+    "parentUuid": "<uuid-19>",
+    "perTurnEffort": "medium",
+    "requestId": "<req-2>",
+    "requestRef": "<uuid-18>",
+    "requestedModel": "claude-haiku-5-5",
+    "sessionId": "<session_id>",
+    "timestamp": "<timestamp-24>",
+    "type": "assistant",
+    "userType": "external",
+    "uuid": "<uuid-20>",
+    "version": "2.1.311"
+  },
+  {
+    "cwd": "<workspace>",
+    "entrypoint": "claude-vscode",
+    "gitBranch": "HEAD",
+    "hasOutput": false,
+    "hookAdditionalContext": [],
+    "hookCount": 1,
+    "hookErrors": [],
+    "hookInfos": [{ "command": "cat > <captures>/stop.json", "durationMs": 0 }],
+    "isSidechain": false,
+    "level": "suggestion",
+    "parentUuid": "<uuid-20>",
+    "preventedContinuation": false,
+    "sessionId": "<session_id>",
+    "stopReason": "",
+    "subtype": "stop_hook_summary",
+    "timestamp": "<timestamp-25>",
+    "toolUseID": "<uuid-22>",
+    "type": "system",
+    "userType": "external",
+    "uuid": "<uuid-21>",
+    "version": "2.1.311"
+  },
+  {
+    "lastPrompt": "Run the bash command: rm /tmp/bump-me-capture",
+    "leafUuid": "<uuid-21>",
+    "sessionId": "<session_id>",
+    "type": "last-prompt"
+  },
+  {
+    "hasUnknownModelCost": false,
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "cacheCreationEphemeral1hInputTokens": 0,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "costUSD": 0,
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "thinkingTokens": 0,
+        "webSearchRequests": 0
+      }
+    },
+    "sessionId": "<session_id>",
+    "startTime": 0,
+    "totalAPIDuration": 0,
+    "totalAPIDurationWithoutRetries": 0,
+    "totalCostUSD": 0,
+    "totalDuration": 0,
+    "totalLinesAdded": 0,
+    "totalLinesRemoved": 0,
+    "totalToolDuration": 0,
+    "type": "cost-state"
+  }
+]

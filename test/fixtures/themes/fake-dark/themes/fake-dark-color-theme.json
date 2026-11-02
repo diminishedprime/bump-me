@@ -1,0 +1,30 @@
+{
+  "name": "Fake Dark",
+  "colors": {
+    "editor.background": "#111111"
+  },
+  "tokenColors": [
+    { "scope": "constant.numeric", "settings": { "foreground": "#FFFF55" } },
+    { "scope": "constant.language", "settings": { "foreground": "#FFFF55" } },
+    { "scope": "invalid", "settings": { "foreground": "#550000" } },
+    { "scope": "invalid.deprecated", "settings": { "foreground": "#550000" } },
+    { "scope": "invalid.illegal", "settings": { "foreground": "#550000" } },
+    { "scope": "markup.deleted", "settings": { "foreground": "#550000" } },
+    { "scope": "comment", "settings": { "foreground": "#888888" } },
+    { "scope": "punctuation", "settings": { "foreground": "#888888" } },
+    { "scope": "meta.separator", "settings": { "foreground": "#888888" } },
+    { "scope": "keyword", "settings": { "foreground": "#FF5555" } },
+    { "scope": "storage", "settings": { "foreground": "#F55" } },
+    { "scope": "storage.modifier", "settings": { "foreground": "#FF5555CC" } },
+    { "scope": "string", "settings": { "foreground": "#55FF55" } },
+    { "scope": "markup.inserted", "settings": { "foreground": "#55FF55FF" } },
+    { "scope": "string.quoted", "settings": { "foreground": "#55FF55AA" } },
+    {
+      "scope": "entity.name.function",
+      "settings": { "foreground": "#5555FF" }
+    },
+    { "scope": "support.function", "settings": { "foreground": "#55F" } },
+    { "scope": "variable.function", "settings": { "foreground": "#55FF" } },
+    { "scope": "meta.embedded", "settings": { "foreground": "" } }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "fake-include",
+  "contributes": {
+    "themes": [
+      {
+        "id": "Fake Include",
+        "label": "Fake Include",
+        "uiTheme": "vs-dark",
+        "path": "./themes/fake-include-color-theme.json"
+      }
+    ]
+  }
+}

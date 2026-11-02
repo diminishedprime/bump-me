@@ -1,0 +1,13 @@
+{
+  "name": "fake-dark",
+  "contributes": {
+    "themes": [
+      {
+        "id": "Fake Dark",
+        "label": "%themeLabel%",
+        "uiTheme": "vs-dark",
+        "path": "./themes/fake-dark-color-theme.json"
+      }
+    ]
+  }
+}

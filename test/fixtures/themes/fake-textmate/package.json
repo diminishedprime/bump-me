@@ -1,0 +1,13 @@
+{
+  "name": "fake-textmate",
+  "contributes": {
+    "themes": [
+      {
+        "id": "Fake TextMate",
+        "label": "Fake TextMate",
+        "uiTheme": "vs-dark",
+        "path": "./themes/fake-textmate-color-theme.json"
+      }
+    ]
+  }
+}

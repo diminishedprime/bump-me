@@ -1,0 +1,12 @@
+{
+  "name": "bump-me",
+  "description": "Hooks that let the Bump Me VS Code extension alert you when Claude needs you.",
+  "owner": { "name": "Matthew Hamrick" },
+  "plugins": [
+    {
+      "name": "bump-me",
+      "source": "./claude-plugin",
+      "description": "Sends Claude Code's turn and permission events to the Bump Me VS Code extension."
+    }
+  ]
+}

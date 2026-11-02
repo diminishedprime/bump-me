@@ -1,0 +1,7 @@
+{
+  "name": "Fake Include",
+  "include": "./fake-base-color-theme.json",
+  "colors": {
+    "editor.background": "#303030"
+  }
+}

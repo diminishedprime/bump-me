@@ -1,0 +1,12 @@
+{
+  "name": "fake-broken",
+  "contributes": {
+    "themes": [
+      {
+        "id": "Fake Broken",
+        "label": "Fake Broken",
+        "uiTheme": "vs-dark"
+      }
+    ]
+  }
+}

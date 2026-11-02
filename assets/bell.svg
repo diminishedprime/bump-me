@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <g transform="translate(512 512) scale(1.78) translate(-512 -508)">
+    <circle cx="512" cy="252" r="30" fill="#D97757"/>
+    <g transform="translate(512 0) scale(1.08 1) translate(-512 0)">
+      <path d="M512 260 C405 260 345 345 345 460 L345 590 C345 630 300 650 290 680 L734 680 C724 650 679 630 679 590 L679 460 C679 345 619 260 512 260 Z" fill="#D97757"/>
+      <rect x="270" y="668" width="484" height="44" rx="22" fill="#D97757"/>
+    </g>
+    <circle cx="512" cy="740" r="54" fill="#D97757"/>
+    <g stroke="#F5EFE6" stroke-width="36" stroke-linecap="round" transform="translate(512 480) scale(1.4) translate(-512 -480)">
+      <line x1="512" y1="480" x2="512" y2="385"/>
+      <line x1="512" y1="480" x2="607" y2="480"/>
+      <line x1="512" y1="480" x2="512" y2="575"/>
+      <line x1="512" y1="480" x2="417" y2="480"/>
+      <line x1="512" y1="480" x2="560" y2="432"/>
+      <line x1="512" y1="480" x2="560" y2="528"/>
+      <line x1="512" y1="480" x2="464" y2="528"/>
+      <line x1="512" y1="480" x2="464" y2="432"/>
+    </g>
+  </g>
+</svg>

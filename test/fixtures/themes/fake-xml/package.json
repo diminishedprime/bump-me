@@ -1,0 +1,13 @@
+{
+  "name": "fake-xml",
+  "contributes": {
+    "themes": [
+      {
+        "id": "Fake XML",
+        "label": "Fake XML",
+        "uiTheme": "vs-dark",
+        "path": "./themes/fake-xml.tmTheme"
+      }
+    ]
+  }
+}

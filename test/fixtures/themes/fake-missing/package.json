@@ -1,0 +1,13 @@
+{
+  "name": "fake-missing",
+  "contributes": {
+    "themes": [
+      {
+        "id": "Fake Missing",
+        "label": "Fake Missing",
+        "uiTheme": "vs-dark",
+        "path": "./themes/fake-missing-color-theme.json"
+      }
+    ]
+  }
+}

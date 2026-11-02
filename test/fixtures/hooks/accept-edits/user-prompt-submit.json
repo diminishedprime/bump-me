@@ -1,0 +1,10 @@
+{
+  "cwd": "<workspace>",
+  "hook_event_name": "UserPromptSubmit",
+  "permission_mode": "acceptEdits",
+  "prompt": "Run the bash command: rm /tmp/bump-me-capture",
+  "prompt_id": "<prompt_id>",
+  "scratchpad_dir": "<claude-tmp>/<workspace-slug>/<session_id>/scratchpad",
+  "session_id": "<session_id>",
+  "transcript_path": "<home>/.claude/projects/<workspace-slug>/<session_id>.jsonl"
+}

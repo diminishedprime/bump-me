@@ -1,0 +1,7 @@
+{
+  "name": "Fake TextMate",
+  "colors": {
+    "editor.background": "#222222"
+  },
+  "tokenColors": "./fake-textmate.tmTheme"
+}

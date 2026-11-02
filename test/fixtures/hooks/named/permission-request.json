@@ -1,0 +1,22 @@
+{
+  "cwd": "<workspace>",
+  "effort": { "level": "medium" },
+  "hook_event_name": "PermissionRequest",
+  "permission_mode": "acceptEdits",
+  "permission_suggestions": [
+    {
+      "destination": "session",
+      "directories": ["/tmp"],
+      "type": "addDirectories"
+    }
+  ],
+  "prompt_id": "<prompt_id>",
+  "scratchpad_dir": "<claude-tmp>/<workspace-slug>/<session_id>/scratchpad",
+  "session_id": "<session_id>",
+  "tool_input": {
+    "command": "rm /tmp/bump-me-capture",
+    "description": "<description>"
+  },
+  "tool_name": "Bash",
+  "transcript_path": "<home>/.claude/projects/<workspace-slug>/<session_id>.jsonl"
+}

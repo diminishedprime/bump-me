@@ -1,0 +1,16 @@
+{
+  "name": "Fake Light",
+  "colors": {
+    // "editor.foreground": "#000000",
+    "editor.background": "#EEEEEE",
+  },
+  "tokenColors": [
+    { "scope": "comment", "settings": { "foreground": "#777777" } },
+    { "scope": "keyword", "settings": { "foreground": "#AA0000" } },
+    { "scope": "string", "settings": { "foreground": "#008800" } },
+    {
+      "scope": "entity.name.function",
+      "settings": { "foreground": "#0000AA" },
+    },
+  ],
+}
