@@ -1,3 +1,9 @@
+## 1.0.2 (2026-11-03)
+
+### Bug Fixes
+
+- summarize releases and preview release notes in dry runs
+
 ## 1.0.1 (2026-11-03)
 
 ### Bug Fixes

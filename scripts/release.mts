@@ -3,7 +3,8 @@ import { mkdtempDisposable, readFile, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { promisify } from "node:util";
-import type { PublishContext } from "semantic-release";
+import { format, resolveConfig } from "prettier";
+import type { PrepareContext, PublishContext } from "semantic-release";
 import { glob } from "tinyglobby";
 
 const GIT_SUFFIX = /\.git$/;
@@ -77,7 +78,17 @@ async function publishToGithub(tag: string, notes: string) {
   return gh("release", "create", tag, "--repo", GITHUB_REPO, "--title", tag, "--notes", notes);
 }
 
-export async function publish(_pluginConfig: unknown, { nextRelease, logger }: PublishContext) {
+export async function prepare(_pluginConfig: unknown, { cwd }: PrepareContext) {
+  const changelog = join(cwd ?? process.cwd(), "CHANGELOG.md");
+  const options = await resolveConfig(changelog);
+  const formatted = await format(await readFile(changelog, "utf8"), {
+    ...options,
+    filepath: changelog,
+  });
+  await writeFile(changelog, formatted);
+}
+
+export async function publish(_pluginConfig: unknown, { nextRelease }: PublishContext) {
   const { version, notes } = nextRelease;
   if (notes === undefined) {
     throw new Error("semantic-release generated no release notes");
@@ -94,7 +105,5 @@ export async function publish(_pluginConfig: unknown, { nextRelease, logger }: P
   await rewriteForGithub(worktree.path, gitea, github);
   await commitAndPush(worktree.path, version, tag);
   const url = await publishToGithub(tag, notes);
-
-  logger.log(`Published ${tag} to GitHub: ${url}`);
   return { name: tag, url };
 }

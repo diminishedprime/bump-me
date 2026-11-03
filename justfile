@@ -130,5 +130,6 @@ uninstall:
     rm -rf ~/Applications/"Bump Me.app" /tmp/bump-me
 
 # Prepare a release
-release:
-    pnpm exec semantic-release --no-ci
+[arg("dry_run", long="dry-run", value="--dry-run")]
+release dry_run="":
+    node scripts/semantic-release.mts {{ dry_run }}

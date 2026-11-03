@@ -22,10 +22,7 @@ export default {
     ],
     "@semantic-release/changelog",
     ["@semantic-release/npm", { npmPublish: false }],
-    [
-      "@semantic-release/exec",
-      { prepareCmd: "pnpm exec prettier --write CHANGELOG.md" },
-    ],
+    "./scripts/release.mts",
     [
       "@semantic-release/git",
       {
@@ -33,6 +30,5 @@ export default {
         message: "chore: release ${nextRelease.version}",
       },
     ],
-    "./scripts/release.mts",
   ],
 } satisfies Options;
