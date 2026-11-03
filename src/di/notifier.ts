@@ -1,3 +1,4 @@
+import { dirname, join } from "node:path";
 import { aborted } from "node:util";
 import { inject, Lifecycle, scoped } from "tsyringe";
 import { Logger } from "#src/di/logger";
@@ -48,7 +49,7 @@ export class Notifier {
         title: folder.name,
         subtitle,
         message,
-        opens: folder.uri.fsPath,
+        opens: this.opens(folder.uri.fsPath),
       },
       lazyTitle,
       scope.signal,
@@ -59,6 +60,22 @@ export class Notifier {
       finished: this.finish(posting, workspaceId, scope.signal),
     };
     await Promise.allSettled([posting]);
+  }
+
+  private opens(folder: string) {
+    const workspaceFile = this.vscode.workspace.workspaceFile;
+    if (workspaceFile?.scheme === "untitled") {
+      const userData = dirname(
+        dirname(dirname(this.vscode.context.globalStorageUri.fsPath)),
+      );
+      return join(
+        userData,
+        "Workspaces",
+        workspaceFile.fsPath,
+        "workspace.json",
+      );
+    }
+    return workspaceFile?.fsPath ?? folder;
   }
 
   async [Symbol.asyncDispose]() {

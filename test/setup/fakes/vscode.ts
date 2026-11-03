@@ -138,6 +138,7 @@ export class FakeVscode extends Vscode {
   constructor(
     focus: "focused" | "unfocused",
     workspace: string[] | undefined,
+    workspaceFile: VSCodeWorkspace["workspaceFile"],
     theme: ThemeName = "Fake Dark",
     editor: Editor = "VS Code",
   ) {
@@ -147,6 +148,7 @@ export class FakeVscode extends Vscode {
         name: basename(folder),
         uri: { fsPath: folder },
       })),
+      workspaceFile,
       getConfiguration: (section) => ({
         get: (key) =>
           `${section}.${key}` === "workbench.colorTheme"
@@ -159,6 +161,12 @@ export class FakeVscode extends Vscode {
       folders,
       { appRoot: editors[editor].appRoot },
       extensions,
+      {
+        globalStorageUri: {
+          fsPath:
+            "/Users/me/Library/Application Support/Code/User/globalStorage/diminishedprime.bump-me",
+        },
+      },
     );
     this.settings = settings;
   }

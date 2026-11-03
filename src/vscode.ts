@@ -18,6 +18,7 @@ export interface VSCodeWorkspace {
         readonly uri: Pick<vscode.Uri, "fsPath">;
       })[]
     | undefined;
+  readonly workspaceFile: Pick<vscode.Uri, "scheme" | "fsPath"> | undefined;
   getConfiguration(section: string): { get(key: string): unknown };
 }
 
@@ -30,11 +31,16 @@ export interface VSCodeExtensions {
   >[];
 }
 
+export interface VSCodeContext {
+  readonly globalStorageUri: Pick<vscode.Uri, "fsPath">;
+}
+
 export class Vscode {
   constructor(
     readonly window: VSCodeWindow,
     readonly workspace: VSCodeWorkspace,
     readonly env: VSCodeEnv,
     readonly extensions: VSCodeExtensions,
+    readonly context: VSCodeContext,
   ) {}
 }

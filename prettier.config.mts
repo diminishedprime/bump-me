@@ -9,5 +9,9 @@ export default {
         jsonRecursiveSort: true,
       },
     },
+    {
+      files: ["scripts/release.mts"],
+      options: { printWidth: 100 },
+    },
   ],
 } satisfies Config;

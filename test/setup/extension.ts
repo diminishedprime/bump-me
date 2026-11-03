@@ -7,13 +7,11 @@ import {
 import { afterEach, expect, onTestFinished, vi } from "vitest";
 import { start } from "#src/di/graph";
 import { Fs } from "#src/fs";
-import { HookSocket } from "#src/hook-socket";
 import { TerminalNotifierCommand } from "#src/terminal-notifier-command";
-import { Vscode } from "#src/vscode";
+import { Vscode, type VSCodeWorkspace } from "#src/vscode";
 import { ClaudeCode } from "#test/setup/outside/claude-code";
 import { Code } from "#test/setup/outside/code";
 import { FakeFs } from "#test/setup/fakes/fs";
-import { FakeHookSocket } from "#test/setup/fakes/hook-socket";
 import { Macos } from "#test/setup/outside/macos";
 import {
   NotificationCenter,
@@ -29,6 +27,7 @@ import {
 interface Initial {
   vscode: "focused" | "unfocused";
   workspace: string[] | undefined;
+  workspaceFile?: VSCodeWorkspace["workspaceFile"];
   aiTitle?: string;
   theme?: ThemeName;
   editor?: Editor;
@@ -36,7 +35,7 @@ interface Initial {
 
 type WindowName = keyof typeof windows;
 
-type InitialState = Omit<Initial, "workspace" | "aiTitle">;
+type InitialState = Omit<Initial, "workspace" | "workspaceFile" | "aiTitle">;
 
 export interface TestWindow {
   oob: {
@@ -79,9 +78,23 @@ const windows = {
     aiTitle: "Tidy up the stage",
   },
   dotfiles: { workspace: ["/Users/me/programming/dotfiles"] },
+  multiRoot: {
+    workspace: ["/Users/me/programming/notes", "/Users/me/programming/recipes"],
+    workspaceFile: {
+      scheme: "file",
+      fsPath: "/Users/me/programming/side-projects.code-workspace",
+    },
+  },
+  untitledMultiRoot: {
+    workspace: ["/Users/me/programming/notes", "/Users/me/programming/recipes"],
+    workspaceFile: { scheme: "untitled", fsPath: "1793664027099" },
+  },
   noWorkspace: { workspace: undefined },
   emptyWorkspace: { workspace: [] },
-} satisfies Record<string, Pick<Initial, "workspace" | "aiTitle">>;
+} satisfies Record<
+  string,
+  Pick<Initial, "workspace" | "workspaceFile" | "aiTitle">
+>;
 
 afterEach(() => {
   vi.useRealTimers();
@@ -132,6 +145,7 @@ class World {
   private windowContainer({
     vscode: focus,
     workspace,
+    workspaceFile,
     aiTitle,
     theme,
     editor,
@@ -141,25 +155,17 @@ class World {
       .createChildContainer()
       .register(FakeVscode, {
         useFactory: instanceCachingFactory(
-          () => new FakeVscode(focus, workspace, theme, editor),
+          () => new FakeVscode(focus, workspace, workspaceFile, theme, editor),
         ),
       })
       .register(Vscode, { useToken: FakeVscode })
-      .registerSingleton(FakeHookSocket)
-      .register(HookSocket, { useToken: FakeHookSocket })
       .registerSingleton(FakeTerminalNotifierCommand)
       .register(TerminalNotifierCommand, {
         useToken: FakeTerminalNotifierCommand,
       })
       .register(ClaudeCode, {
         useFactory: instanceCachingFactory(
-          (resolver) =>
-            new ClaudeCode(
-              resolver.resolve(FakeHookSocket),
-              resolver.resolve(FakeFs),
-              root,
-              aiTitle,
-            ),
+          (resolver) => new ClaudeCode(resolver.resolve(FakeFs), root, aiTitle),
         ),
       });
   }
@@ -180,6 +186,7 @@ class World {
     const vscode = window.resolve(FakeVscode);
     vscode.window.onDidClose(async () => {
       await running.disposeAsync();
+      await window.dispose();
     });
     const claude = window.resolve(ClaudeCode);
     const macos = window.resolve(Macos);

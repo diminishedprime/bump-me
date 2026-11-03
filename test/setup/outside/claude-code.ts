@@ -5,7 +5,6 @@ import transcript from "#fixtures/hooks/accept-edits/transcript.json";
 import userPromptSubmit from "#fixtures/hooks/accept-edits/user-prompt-submit.json";
 import workspaceIds from "#fixtures/workspace-ids.json";
 import type { FakeFs } from "#test/setup/fakes/fs";
-import type { FakeHookSocket } from "#test/setup/fakes/hook-socket";
 
 interface Payload {
   transcript_path: string;
@@ -17,7 +16,6 @@ export class ClaudeCode {
   static readonly SOCKET_DIRECTORY = "/tmp/bump-me";
 
   constructor(
-    private readonly socket: FakeHookSocket,
     private readonly fs: FakeFs,
     private readonly root: string | undefined,
     private readonly aiTitle: string | undefined,
@@ -75,7 +73,7 @@ export class ClaudeCode {
     const transcriptPath = ClaudeCode.transcriptPath(payload, this.root);
     await this.writeTranscript(transcriptPath);
     const delivered = { ...payload, transcript_path: transcriptPath };
-    await this.socket.deliver(
+    await this.fs.connect(
       ClaudeCode.socketPath(this.root),
       JSON.stringify(delivered),
     );
@@ -95,7 +93,7 @@ export class ClaudeCode {
       ...this.customTitleLines(),
     ];
     const jsonl = lines.map((line) => JSON.stringify(line)).join("\n");
-    await this.fs.directory(dirname(path));
+    await this.fs.mkdir(dirname(path));
     await this.fs.writeFile(path, Buffer.from(jsonl));
   }
 

@@ -15,6 +15,8 @@ await build({
   format: "cjs",
   mainFields: ["module", "main"],
   external: ["vscode"],
+  define: { Reflect: "bumpMeReflect" },
+  banner: { js: '"use strict";const bumpMeReflect = Object.create(Reflect);' },
   outfile: "dist/main.js",
 });
 

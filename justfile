@@ -56,6 +56,7 @@ workspace-id-fixtures:
         /Users/me/programming/bump-me
         /Users/me/programming/mindful-stage
         /Users/me/programming/dotfiles
+        /Users/me/programming/notes
     )
     for root in $roots; do
         print -r -- "$root"$'\t'"${root:t}_$(print -rn -- "$root" | shasum -a 256 | cut -c1-12)"
@@ -128,43 +129,6 @@ uninstall:
     -claude plugin marketplace remove bump-me
     rm -rf ~/Applications/"Bump Me.app" /tmp/bump-me
 
-# Snapshot main onto the release branch with GitHub URLs, and tag it.
+# Prepare a release
 release:
-    #!/usr/bin/env zsh
-    set -euo pipefail
-    version=$(git show main:package.json | jq -r .version)
-    tag=v$version
-    if git rev-parse -q --verify "refs/tags/$tag" >/dev/null; then
-        print -u2 -r -- "$tag already exists, bump the version in package.json first"
-        exit 1
-    fi
-    work=$(mktemp -d)
-    trap 'git worktree remove --force "$work"' EXIT
-    if git rev-parse -q --verify refs/heads/release >/dev/null; then
-        git worktree add --quiet "$work" release
-    else
-        git worktree add --quiet --orphan -b release "$work"
-    fi
-    git -C "$work" read-tree -u --reset main
-    gitea=${$(git remote get-url origin)%.git}
-    host=${${gitea#https://}%%/*}
-    github=https://github.com/diminishedprime/bump-me
-    files=(${(0)"$(git -C "$work" grep -lz -F "$gitea" || true)"})
-    if ((${#files} > 0)); then
-        (cd "$work" && sed -i '' \
-            -e "s#$gitea/src/branch/main#$github/blob/main#g" \
-            -e "s#$gitea/raw/branch/main#$github/raw/main#g" \
-            -e "s#$gitea#$github#g" \
-            $files)
-    fi
-    if git -C "$work" grep -n -F "$host"; then
-        print -u2 -r -- "Gitea references remain after the rewrite"
-        exit 1
-    fi
-    git -C "$work" add -A
-    git -C "$work" commit --quiet -m "Bump Me $version release"
-    git tag "$tag" release
-    git push --quiet origin release "$tag"
-    git config branch.release.remote github
-    git config branch.release.merge refs/heads/main
-    print -r -- "Tagged $tag, push it with: git push github release:main $tag"
+    pnpm exec semantic-release --no-ci

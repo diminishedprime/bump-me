@@ -1,4 +1,5 @@
 import { join } from "node:path";
+import { Duplex } from "node:stream";
 import { createFsFromVolume, Volume } from "memfs";
 import { expect } from "vitest";
 import { WorkspaceId } from "#src/workspace-id";
@@ -25,6 +26,10 @@ const editorFiles = Object.values(editors).flatMap(
 );
 
 export class FakeFs extends Fs {
+  private readonly sockets = new Map<
+    string,
+    (connection: Duplex) => Promise<void>
+  >();
   private readonly memory = createFsFromVolume(
     Volume.fromJSON({
       ...Object.fromEntries(
@@ -67,11 +72,42 @@ export class FakeFs extends Fs {
   }
 
   override async rm(path: string) {
+    this.sockets.delete(path);
     await this.memory.promises.rm(path, { force: true });
   }
 
-  async directory(path: string) {
+  override async mkdir(path: string) {
     await this.memory.promises.mkdir(path, { recursive: true });
+  }
+
+  override listen(
+    path: string,
+    serve: (connection: Duplex) => Promise<void>,
+    _failed: (error: Error) => void,
+    signal: AbortSignal,
+  ) {
+    this.sockets.set(path, serve);
+    signal.addEventListener("abort", () => {
+      this.sockets.delete(path);
+    });
+  }
+
+  async connect(path: string, payload: string) {
+    const serve = this.sockets.get(path);
+    if (serve === undefined) {
+      return;
+    }
+    const connection = new Duplex({
+      allowHalfOpen: false,
+      read() {
+        this.push(payload);
+        this.push(null);
+      },
+      write(_chunk, _encoding, done) {
+        done();
+      },
+    });
+    await serve(connection);
   }
 
   async exists(path: string) {
